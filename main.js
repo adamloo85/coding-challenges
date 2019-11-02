@@ -26,12 +26,12 @@ function init() {
     enemyY = getRandomCoor(playerY)
     updateBoard(container, enemyX, enemyY, 'Mouse');
 
-    window.setInterval(function() {
+    const interval = window.setInterval(function() {
         clearCell(container, enemyX, enemyY);
         enemyX = getRandomCoor(playerX);
         enemyY = getRandomCoor(playerY)
         updateBoard(container, enemyX, enemyY, 'Mouse');
-    }, 500);
+    }, 750);
 
     // when keypress happens
     // up: 38
@@ -75,7 +75,8 @@ function init() {
 
         if (hasCollided) {
             alert('You Win!');
-            window.clearInterval();
+            window.clearInterval(interval);
+            updateBoard(container, enemyX, enemyY, 'Dead');
             return;
         } else {
             updateBoard(container, playerX, playerY, 'Cat');
