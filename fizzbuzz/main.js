@@ -1,9 +1,10 @@
-function fizzbuzz(value) {
-    const isFizz = value % 3;
-    const isBuzz = value % 5;
+// long verbose solution
+function fizzBuzz(value) {
+    const isFizz = value % 3 === 0;
+    const isBuzz = value % 5 === 0;
 
     if (isFizz && isBuzz) {
-        return 'Fizzbuzz';
+        return 'FizzBuzz';
     }
 
     if (isFizz) {
@@ -15,7 +16,10 @@ function fizzbuzz(value) {
     }
 }
 
+// one line solution
+const betterFizzBuzz = value => `${value % 3 === 0 ? 'Fizz' : ''}${value % 5 === 0 ? 'Buzz' : ''}`
+
 for (let i = 0; i < 100; i++) {
-    const result = fizzbuzz(i);
+    const result = betterFizzBuzz(i);
     console.log(result);
 }
