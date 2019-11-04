@@ -4,6 +4,7 @@ Write a function that returns true or false based on whether a word search match
 Matches can be vertical, horizontal, diagonal, and any other shape as long as each letter is next to each other.
 A letter in a match cannot be used twice.
 
+```javascript
 const board = [
     ['c', 'd', 'e', 'f'],
     ['e', 'a', 'm', 'u'],
@@ -11,6 +12,9 @@ const board = [
     ['s', 'y', 'm', 'f']
 ]
 
-wordExists(board, 'car') => true
-wordExists(board, 'off') => true
-wordExists(board, 'you') => true
+wordExists(board, 'car') // true
+wordExists(board, 'off') // true
+wordExists(board, 'you') // true
+
+wordExists(board, 'race') // false
+```
